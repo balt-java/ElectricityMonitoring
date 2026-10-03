@@ -1,0 +1,20 @@
+# Maven
+target/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Local configuration
+.env
+application-local.properties
+/bin/
