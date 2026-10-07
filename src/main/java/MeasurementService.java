@@ -20,6 +20,9 @@ public class MeasurementService {
 
     public Measurement getHighestConsumption() {
 
+    	if (measurements.isEmpty()) {
+    		return null;
+    	}
         Measurement highest = measurements.get(0);
 
         for (Measurement measurement : measurements) {
