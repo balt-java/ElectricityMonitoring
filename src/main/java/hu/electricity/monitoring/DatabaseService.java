@@ -55,4 +55,21 @@ public class DatabaseService {
 
         return measurements;
     }
+    public void saveMeasurement(Measurement measurement) throws SQLException {
+
+        String sql = "INSERT INTO measurements (consumption, timestamp) VALUES (?, ?)";
+
+        try (Connection connection = getConnection();
+             java.sql.PreparedStatement statement =
+                     connection.prepareStatement(sql)) {
+
+            statement.setDouble(1, measurement.getConsumption());
+            statement.setTimestamp(
+                    2,
+                    java.sql.Timestamp.valueOf(measurement.getTimestamp())
+            );
+
+            statement.executeUpdate();
+        }
+    }
 }
