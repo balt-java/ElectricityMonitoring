@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 
 import org.junit.jupiter.api.Test;
 
+import hu.electricity.monitoring.Measurement;
+
 public class MeasurementTest {
 
     @Test

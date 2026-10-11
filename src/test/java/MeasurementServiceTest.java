@@ -4,6 +4,9 @@ import java.time.LocalDateTime;
 
 import org.junit.jupiter.api.Test;
 
+import hu.electricity.monitoring.Measurement;
+import hu.electricity.monitoring.MeasurementService;
+
 public class MeasurementServiceTest {
 
     @Test
