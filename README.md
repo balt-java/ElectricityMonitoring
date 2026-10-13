@@ -4,7 +4,7 @@
 
 Electricity Monitoring is a Java Spring Boot REST API application for storing, retrieving, and analyzing electricity consumption measurements.
 
-The application uses PostgreSQL to store measurement data and provides HTTP endpoints to retrieve measurements and identify the highest consumption value.
+The application uses PostgreSQL to store measurement data and provides HTTP endpoints to retrieve measurements, add new measurements, and identify the highest consumption value. It also demonstrates data validation, file handling, database connectivity, and automated testing.
 
 ## Technologies
 
@@ -15,14 +15,19 @@ The application uses PostgreSQL to store measurement data and provides HTTP endp
 * JDBC
 * REST API
 * JUnit 5
+* Git and GitHub
 
 ## Features
 
 * Retrieve all electricity consumption measurements
+* Add new measurements through a REST API
 * Retrieve the measurement with the highest consumption
-* Load measurement data from a PostgreSQL database
+* Store measurements in a PostgreSQL database
+* Load measurement data from PostgreSQL
 * Validate measurement values and timestamps
-* Test application functionality with automated tests
+* Search measurements by timestamp
+* Save and load measurement data using text files
+* Run automated tests
 
 ## API Endpoints
 
@@ -31,14 +36,22 @@ The application uses PostgreSQL to store measurement data and provides HTTP endp
 | GET    | `/api/test`                 | Check whether the API is running                      |
 | GET    | `/api/measurements`         | Retrieve all measurements                             |
 | GET    | `/api/measurements/highest` | Retrieve the measurement with the highest consumption |
+| POST   | `/api/measurements`         | Add a new measurement                                 |
+
+### Example POST request
+
+```json
+{
+  "consumption": 20.4,
+  "timestamp": "2026-10-11T12:00:00"
+}
+```
 
 ## Database Configuration
 
-The application connects to a local PostgreSQL database named `electricity_monitoring`.
+The application connects to a PostgreSQL database named `electricity_monitoring`.
 
-Configure the database password using the `DB_PASSWORD` environment variable.
-
-Do not store database passwords or other secrets in the source code.
+Set the PostgreSQL password using the `DB_PASSWORD` environment variable. Database passwords and other secrets should not be stored in source code.
 
 ## Running the Application
 
@@ -60,4 +73,17 @@ mvn test
 
 ## Project Status
 
-The application currently provides basic REST endpoints for retrieving and analyzing electricity consumption measurements.
+The application provides REST endpoints for creating, retrieving, and analyzing electricity consumption measurements, with PostgreSQL persistence.
+
+## Planned Improvements
+
+* JPA / Hibernate
+* Improved exception handling
+* Docker support
+* API documentation
+* Further automated tests and integration improvements
+
+## Author
+
+Portfolio project created to demonstrate Java backend development skills and continuous learning.
+ 
