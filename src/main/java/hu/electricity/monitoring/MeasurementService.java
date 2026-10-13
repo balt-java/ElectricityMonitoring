@@ -13,15 +13,20 @@ public class MeasurementService {
 
     private List<Measurement> measurements = new ArrayList<>();
 
-    public void addMeasurement(Measurement measurement) {
+    
+public void addMeasurement(Measurement measurement) {
     DatabaseService databaseService = new DatabaseService();
 
     try {
         databaseService.saveMeasurement(measurement);
-        measurements.add(measurement);
+        addMeasurementWithoutDatabase(measurement);
     } catch (SQLException e) {
         throw new RuntimeException("A mérés adatbázisba mentése sikertelen.", e);
     }
+}
+
+public void addMeasurementWithoutDatabase(Measurement measurement) {
+    measurements.add(measurement);
 }
 
     public List<Measurement> getMeasurements() {

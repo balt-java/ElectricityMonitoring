@@ -14,21 +14,21 @@ public class MeasurementServiceTest {
 
         MeasurementService service = new MeasurementService();
 
-        service.addMeasurement(
+        service.addMeasurementWithoutDatabase(
                 new Measurement(
                         10.5,
                         LocalDateTime.of(2026, 9, 28, 15, 30)
                 )
         );
 
-        service.addMeasurement(
+        service.addMeasurementWithoutDatabase(
                 new Measurement(
                         25.7,
                         LocalDateTime.of(2026, 9, 28, 16, 0)
                 )
         );
 
-        service.addMeasurement(
+        service.addMeasurementWithoutDatabase(
                 new Measurement(
                         18.2,
                         LocalDateTime.of(2026, 9, 28, 16, 30)
@@ -58,7 +58,7 @@ public class MeasurementServiceTest {
         Measurement measurement =
                 new Measurement(25.7, timestamp);
 
-        service.addMeasurement(measurement);
+        service.addMeasurementWithoutDatabase(measurement);
 
         Measurement result =
                 service.findByTimestamp("2026-09-28T16:00");
@@ -70,7 +70,7 @@ public class MeasurementServiceTest {
 
         MeasurementService service = new MeasurementService();
 
-        service.addMeasurement(
+        service.addMeasurementWithoutDatabase(
                 new Measurement(
                         25.7,
                         LocalDateTime.of(2026, 9, 28, 16, 0)
